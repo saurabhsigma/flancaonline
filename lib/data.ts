@@ -1,0 +1,51 @@
+import "server-only";
+
+import { defaultProjects, defaultSiteContent } from "@/lib/constants";
+import { connectToDatabase } from "@/lib/db";
+import { ContactMessageModel } from "@/models/contact-message";
+import { ProjectModel } from "@/models/project";
+import { SiteContentModel } from "@/models/site-content";
+
+export async function ensureSiteContent() {
+  await connectToDatabase();
+  const existing = await SiteContentModel.findOne();
+
+  if (existing) {
+    return existing;
+  }
+
+  return SiteContentModel.create(defaultSiteContent);
+}
+
+export async function getSiteContent() {
+  const content = await ensureSiteContent();
+  return JSON.parse(JSON.stringify(content));
+}
+
+export async function getFeaturedProjects() {
+  await connectToDatabase();
+
+  const projectCount = await ProjectModel.countDocuments();
+  if (projectCount === 0) {
+    await ProjectModel.insertMany(defaultProjects);
+  }
+
+  const projects = await ProjectModel.find().sort({ createdAt: -1 }).lean();
+  return JSON.parse(JSON.stringify(projects));
+}
+
+export async function getAdminDashboardData() {
+  await connectToDatabase();
+
+  const [content, projects, messages] = await Promise.all([
+    getSiteContent(),
+    getFeaturedProjects(),
+    ContactMessageModel.find().sort({ createdAt: -1 }).limit(10).lean(),
+  ]);
+
+  return {
+    content,
+    projects: JSON.parse(JSON.stringify(projects)),
+    messages: JSON.parse(JSON.stringify(messages)),
+  };
+}

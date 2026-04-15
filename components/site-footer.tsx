@@ -1,0 +1,22 @@
+import Link from "next/link";
+
+export function SiteFooter() {
+  return (
+    <footer className="border-t border-border/60 py-8">
+      <div className="container-max flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} Flanca. Crafted for ambitious brands.</p>
+        <div className="flex items-center gap-4">
+          <Link href="#portfolio" className="hover:text-foreground">
+            Projects
+          </Link>
+          <Link href="#contact" className="hover:text-foreground">
+            Contact
+          </Link>
+          <Link href="/admin" className="hover:text-foreground">
+            Admin
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
