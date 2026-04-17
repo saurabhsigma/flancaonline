@@ -4,39 +4,39 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
+    --background: 206 100% 97%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --primary: 220 70% 52%;
+    --border: 206 52% 86%;
+    --input: 206 52% 86%;
+    --primary: 212 92% 55%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
+    --secondary: 201 88% 92%;
     --secondary-foreground: 222 47% 11%;
-    --accent: 24 95% 58%;
+    --accent: 32 97% 61%;
     --accent-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --ring: 220 70% 52%;
+    --muted: 204 60% 94%;
+    --muted-foreground: 217 20% 39%;
+    --ring: 212 92% 55%;
   }
 
   .dark {
-    --background: 222 47% 7%;
+    --background: 220 50% 7%;
     --foreground: 210 40% 98%;
-    --card: 222 39% 11%;
+    --card: 219 44% 11%;
     --card-foreground: 210 40% 98%;
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --primary: 217 91% 60%;
+    --border: 217 37% 20%;
+    --input: 217 37% 20%;
+    --primary: 206 100% 64%;
     --primary-foreground: 222 47% 11%;
-    --secondary: 221 39% 14%;
+    --secondary: 217 42% 16%;
     --secondary-foreground: 210 40% 98%;
-    --accent: 31 95% 61%;
+    --accent: 33 95% 63%;
     --accent-foreground: 222 47% 11%;
-    --muted: 223 30% 15%;
-    --muted-foreground: 215 20% 72%;
-    --ring: 217 91% 60%;
+    --muted: 217 34% 15%;
+    --muted-foreground: 213 23% 76%;
+    --ring: 206 100% 64%;
   }
 
   * {
@@ -55,9 +55,33 @@
       "Segoe UI",
       "Helvetica Neue",
       sans-serif;
+    background-color: hsl(var(--background));
     background-image:
-      radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 32%),
-      radial-gradient(circle at top right, rgba(249, 115, 22, 0.12), transparent 28%);
+      radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.24), transparent 30%),
+      radial-gradient(circle at 88% 16%, rgba(59, 130, 246, 0.22), transparent 26%),
+      radial-gradient(circle at 50% 58%, rgba(251, 191, 36, 0.14), transparent 24%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(230, 244, 255, 0.88));
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.45;
+    background:
+      linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0%, transparent 38%),
+      radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.14), transparent 26%);
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at 18% 20%, rgba(14, 165, 233, 0.26), transparent 28%),
+      radial-gradient(circle at 84% 14%, rgba(37, 99, 235, 0.32), transparent 26%),
+      radial-gradient(circle at 50% 55%, rgba(249, 115, 22, 0.16), transparent 22%),
+      linear-gradient(180deg, rgba(4, 13, 32, 0.94), rgba(8, 20, 44, 0.98));
   }
 }
 
@@ -67,6 +91,27 @@
   }
 
   .glass-panel {
-    @apply border border-white/10 bg-white/70 backdrop-blur-xl dark:bg-slate-950/60;
+    @apply border border-white/30 bg-white/65 backdrop-blur-xl dark:border-sky-300/10 dark:bg-slate-950/55;
+    box-shadow:
+      0 22px 70px -38px rgba(14, 116, 144, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+
+  .section-wash {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(219, 234, 254, 0.42)),
+      radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 36%);
+  }
+
+  .blue-orb {
+    background:
+      radial-gradient(circle at 30% 30%, rgba(191, 219, 254, 0.95), rgba(59, 130, 246, 0.72) 46%, rgba(30, 64, 175, 0.18) 72%, transparent 74%);
+    filter: blur(2px);
+  }
+
+  .sunset-orb {
+    background:
+      radial-gradient(circle at 35% 35%, rgba(254, 240, 138, 0.9), rgba(251, 146, 60, 0.68) 45%, rgba(249, 115, 22, 0.12) 72%, transparent 74%);
+    filter: blur(2px);
   }
 }

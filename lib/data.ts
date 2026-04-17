@@ -6,11 +6,20 @@ import { ContactMessageModel } from "@/models/contact-message";
 import { ProjectModel } from "@/models/project";
 import { SiteContentModel } from "@/models/site-content";
 
+const LEGACY_HERO_BADGE = "Digital products that move business forward";
+const LEGACY_PROJECT_TITLES = ["Northstar Ventures", "PulseFlow Dashboard"];
+
 export async function ensureSiteContent() {
   await connectToDatabase();
   const existing = await SiteContentModel.findOne();
 
   if (existing) {
+    // One-time migration for legacy seeded content.
+    if (existing.heroBadge === LEGACY_HERO_BADGE) {
+      Object.assign(existing, defaultSiteContent);
+      await existing.save();
+    }
+
     return existing;
   }
 
@@ -28,6 +37,16 @@ export async function getFeaturedProjects() {
   const projectCount = await ProjectModel.countDocuments();
   if (projectCount === 0) {
     await ProjectModel.insertMany(defaultProjects);
+  } else {
+    const legacyProjectCount = await ProjectModel.countDocuments({
+      title: { $in: LEGACY_PROJECT_TITLES },
+    });
+
+    // Replace only the old two-item starter dataset, keep all custom user data intact.
+    if (projectCount <= 2 && legacyProjectCount === projectCount) {
+      await ProjectModel.deleteMany({});
+      await ProjectModel.insertMany(defaultProjects);
+    }
   }
 
   const projects = await ProjectModel.find().sort({ createdAt: -1 }).lean();

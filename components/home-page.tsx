@@ -1,18 +1,17 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { AnimatedSection } from "@/components/animated-section";
 import { ContactForm } from "@/components/contact-form";
+import { ProductShowcase } from "@/components/product-showcase";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { formatTechStack } from "@/lib/utils";
 
-type Project = {
+type Product = {
   _id: string;
   title: string;
   description: string;
@@ -45,7 +44,7 @@ export function HomePage({
   projects,
 }: {
   content: SiteContent;
-  projects: Project[];
+  projects: Product[];
 }) {
   return (
     <div className="min-h-screen">
@@ -69,7 +68,7 @@ export function HomePage({
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="#portfolio">{content.heroSecondaryCta}</Link>
+                  <Link href="#products">{content.heroSecondaryCta}</Link>
                 </Button>
               </div>
             </div>
@@ -110,7 +109,7 @@ export function HomePage({
         <AnimatedSection id="services" className="py-20">
           <div className="container-max">
             <SectionHeading
-              badge="Services"
+              badge="Star Services"
               title="Digital services built for measurable momentum"
               description={content.servicesIntro}
             />
@@ -153,48 +152,14 @@ export function HomePage({
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="portfolio" className="py-20">
+        <AnimatedSection id="products" className="py-20">
           <div className="container-max">
             <SectionHeading
-              badge="Portfolio"
-              title="Recent work that balances aesthetics, usability, and results"
-              description="Featured projects from the Flanca pipeline, loaded dynamically from the CMS."
+              badge="Products"
+              title="Software products built for the Indian market"
+              description="Click any product to view the full description, use case, and product stack."
             />
-            <div className="mt-14 grid gap-8 lg:grid-cols-2">
-              {projects.map((project) => (
-                <Card
-                  key={project._id}
-                  className="group overflow-hidden border-border/70 bg-card/85 transition duration-300 hover:-translate-y-2"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={project.images[0]?.url ?? "https://res.cloudinary.com/demo/image/upload/sample.jpg"}
-                      alt={project.images[0]?.alt ?? project.title}
-                      fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-start justify-between gap-4">
-                      <h3 className="text-2xl font-semibold">{project.title}</h3>
-                      {project.liveLink ? (
-                        <Button asChild variant="ghost" size="icon">
-                          <Link href={project.liveLink} target="_blank">
-                            <ExternalLink className="h-4 w-4" />
-                          </Link>
-                        </Button>
-                      ) : null}
-                    </div>
-                    <p className="mt-4 text-sm leading-6 text-muted-foreground">
-                      {project.description}
-                    </p>
-                    <p className="mt-4 text-xs uppercase tracking-[0.2em] text-primary">
-                      {formatTechStack(project.techStack)}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-            </div>
+            <ProductShowcase products={projects} />
           </div>
         </AnimatedSection>
 

@@ -232,7 +232,7 @@ export function AdminDashboard({
           <p className="text-sm uppercase tracking-[0.24em] text-primary">Admin Dashboard</p>
           <h1 className="mt-2 text-4xl font-semibold tracking-tight">Control center</h1>
           <p className="mt-3 text-muted-foreground">
-            Update site messaging, manage the portfolio, and review inbound leads.
+            Update site messaging, manage the product catalogue, and review inbound leads.
           </p>
         </div>
         <Button variant="outline" onClick={() => signOut({ callbackUrl: "/admin" })}>
@@ -373,10 +373,10 @@ export function AdminDashboard({
             <div className="mb-6 flex items-center justify-between gap-4">
               <div>
                 <h2 className="text-2xl font-semibold">
-                  {isEditing ? "Edit Project" : "Add Project"}
+                  {isEditing ? "Edit Product" : "Add Product"}
                 </h2>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Showcase new case studies with Cloudinary-hosted visuals.
+                  Showcase new products with Cloudinary-hosted visuals.
                 </p>
               </div>
               {isEditing ? (
@@ -387,7 +387,7 @@ export function AdminDashboard({
             </div>
             <form className="space-y-5" onSubmit={projectForm.handleSubmit(handleProjectSubmit)}>
               <div className="space-y-2">
-                <Label>Project Title</Label>
+                <Label>Product Title</Label>
                 <Input {...projectForm.register("title")} />
               </div>
               <div className="space-y-2">
@@ -482,13 +482,13 @@ export function AdminDashboard({
                 Mark as featured
               </label>
               <Button type="submit" disabled={projectSubmitting || uploading}>
-                {projectSubmitting ? "Saving..." : isEditing ? "Update Project" : "Create Project"}
+                {projectSubmitting ? "Saving..." : isEditing ? "Update Product" : "Create Product"}
               </Button>
             </form>
           </Card>
 
           <Card className="glass-panel p-6">
-            <h2 className="text-2xl font-semibold">Projects</h2>
+            <h2 className="text-2xl font-semibold">Products</h2>
             <div className="mt-6 space-y-4">
               {projects.map((project) => (
                 <div

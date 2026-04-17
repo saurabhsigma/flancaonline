@@ -6,7 +6,7 @@ Flanca is a full-stack digital agency website built with Next.js App Router, Tai
 
 - Premium responsive agency landing page with light and dark theme support
 - Editable homepage content managed from `/admin`
-- Project portfolio CRUD with Cloudinary image uploads
+- Product catalogue CRUD with Cloudinary image uploads
 - Credentials-based admin authentication with NextAuth
 - Contact form persistence to MongoDB
 - Toast notifications, loading states, and modular project structure

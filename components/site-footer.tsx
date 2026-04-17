@@ -6,8 +6,8 @@ export function SiteFooter() {
       <div className="container-max flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} Flanca. Crafted for ambitious brands.</p>
         <div className="flex items-center gap-4">
-          <Link href="#portfolio" className="hover:text-foreground">
-            Projects
+          <Link href="#products" className="hover:text-foreground">
+            Products
           </Link>
           <Link href="#contact" className="hover:text-foreground">
             Contact

@@ -2,34 +2,34 @@ export const ADMIN_USERNAME = "admin";
 export const ADMIN_PASSWORD = "admin123";
 
 export const defaultSiteContent = {
-  heroBadge: "Digital products that move business forward",
-  heroTitle: "Flanca designs and builds high-converting digital experiences.",
+  heroBadge: "Digital products for modern Indian businesses",
+  heroTitle: "Flanca designs and builds scalable software products.",
   heroDescription:
-    "We partner with ambitious teams to craft websites, apps, and custom software that look premium, feel intuitive, and scale with confidence.",
+    "We partner with ambitious teams to craft products that look premium, feel intuitive, and scale with confidence.",
   heroPrimaryCta: "Book a Strategy Call",
-  heroSecondaryCta: "Explore Our Work",
+  heroSecondaryCta: "Explore Products",
   servicesIntro:
-    "From polished landing pages to complex product builds, we combine design clarity with engineering depth.",
+    "Our star services focus on CMS, LMS, and high-demand software products that modern Indian businesses adopt to scale faster.",
   services: [
     {
-      title: "Websites",
+      title: "CMS Platforms",
       description:
-        "Marketing sites and platforms that feel sharp, load fast, and guide visitors toward action.",
+        "Custom content management systems for media brands, agencies, and teams that need fast publishing, roles, approvals, and SEO-ready workflows.",
     },
     {
-      title: "Apps",
+      title: "LMS Platforms",
       description:
-        "Modern web applications focused on usability, performance, and long-term product growth.",
+        "Learning management solutions for coaching institutes, schools, and training companies with courses, assessments, certificates, and learner analytics.",
     },
     {
-      title: "UI/UX",
+      title: "E-commerce Products",
       description:
-        "User journeys, interfaces, and systems that reduce friction and build trust at every touchpoint.",
+        "Conversion-focused commerce products with catalog, cart, payments, promotions, and order flows optimized for mobile-first customers.",
     },
     {
-      title: "Custom Software",
+      title: "CRM & ERP Systems",
       description:
-        "Tailored internal tools and business systems designed around how your team actually works.",
+        "Business software for sales, operations, and support with lead pipelines, automation, reporting, and integrations tailored to your process.",
     },
   ],
   whyChooseUsTitle: "Why fast-growing teams choose Flanca",
@@ -38,9 +38,9 @@ export const defaultSiteContent = {
     "Senior-level design and engineering on every project",
     "Clear communication, fast iterations, and measurable outcomes",
   ],
-  aboutTitle: "A focused agency for founders, startups, and modern businesses",
+  aboutTitle: "A focused product studio for founders, startups, and modern businesses",
   aboutDescription:
-    "Flanca blends product thinking, visual refinement, and reliable engineering to help brands show up stronger online. We build experiences that feel thoughtful on day one and flexible on day one hundred.",
+    "Flanca blends product thinking, visual refinement, and reliable engineering to help brands launch software that feels thoughtful on day one and flexible on day one hundred.",
   contactTitle: "Tell us what you're building",
   contactDescription:
     "Share your goals, timeline, and vision. We’ll come back with a practical next step.",
@@ -51,33 +51,157 @@ export const defaultSiteContent = {
 
 export const defaultProjects = [
   {
-    title: "Northstar Ventures",
+    title: "NewsFlow CMS",
     description:
-      "A premium venture studio website focused on trust-building, partner credibility, and streamlined inbound conversion.",
-    techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "MongoDB"],
+      "A content management system for new-age publishing agencies to draft, edit, schedule, and publish articles faster while keeping SEO, editorial workflows, and approvals in one place.",
+    techStack: ["Next.js", "MongoDB", "Tailwind CSS", "Cloudinary"],
     images: [
       {
         url: "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-        publicId: "demo-sample-1",
-        alt: "Northstar Ventures website preview",
+        publicId: "newsflow-cms",
+        alt: "NewsFlow CMS dashboard preview",
       },
     ],
-    liveLink: "https://example.com",
     featured: true,
   },
   {
-    title: "PulseFlow Dashboard",
+    title: "CampusLearn LMS",
     description:
-      "A modern analytics experience for SaaS operators with a strong focus on clarity, interaction design, and decision-making.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Mongoose"],
+      "A learning management system for coaching institutes, schools, and training companies with courses, quizzes, certificates, and student progress tracking.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
     images: [
       {
         url: "https://res.cloudinary.com/demo/image/upload/samples/landscapes/girl-urban-view.jpg",
-        publicId: "demo-sample-2",
-        alt: "PulseFlow dashboard project preview",
+        publicId: "campuslearn-lms",
+        alt: "CampusLearn LMS preview",
       },
     ],
-    liveLink: "https://example.com",
+    featured: true,
+  },
+  {
+    title: "TestAce AI",
+    description:
+      "An AI-powered test series platform for competitive exam prep with mock tests, instant analytics, adaptive practice, and student performance insights.",
+    techStack: ["Next.js", "OpenAI", "PostgreSQL", "Tailwind CSS"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/demo/image/upload/samples/landscapes/beach-boat.jpg",
+        publicId: "testace-ai",
+        alt: "TestAce AI preview",
+      },
+    ],
+    featured: true,
+  },
+  {
+    title: "RetailKart Commerce Suite",
+    description:
+      "A D2C and retail commerce platform for Indian sellers with catalog management, offers, payments, and order tracking built to convert on mobile-first traffic.",
+    techStack: ["Next.js", "Stripe", "MongoDB", "Cloudinary"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/demo/image/upload/samples/ecommerce/leather_bag.jpg",
+        publicId: "retailkart-commerce-suite",
+        alt: "RetailKart commerce suite preview",
+      },
+    ],
+    featured: true,
+  },
+  {
+    title: "ClinicDesk",
+    description:
+      "A clinic management platform for doctors and diagnostic centers with appointments, patient records, billing, and follow-ups in one dashboard.",
+    techStack: ["Next.js", "MongoDB", "Twilio", "Tailwind CSS"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/demo/image/upload/samples/food/dessert.jpg",
+        publicId: "clinicdesk",
+        alt: "ClinicDesk dashboard preview",
+      },
+    ],
+    featured: true,
+  },
+  {
+    title: "HireSphere HRMS",
+    description:
+      "A modern HR and payroll product for startups and SMEs covering onboarding, attendance, leave, payroll, and employee self-service.",
+    techStack: ["Next.js", "TypeScript", "MongoDB", "PDF Generation"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/demo/image/upload/samples/people/kitchen-bar.jpg",
+        publicId: "hiresphere-hrms",
+        alt: "HireSphere HRMS preview",
+      },
+    ],
+    featured: true,
+  },
+  {
+    title: "FleetPilot Logistics",
+    description:
+      "A logistics and fleet management platform for transport businesses to track vehicles, shipments, routes, and delivery performance.",
+    techStack: ["Next.js", "Maps API", "MongoDB", "Node.js"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/demo/image/upload/samples/people/bicycle.jpg",
+        publicId: "fleetpilot-logistics",
+        alt: "FleetPilot logistics preview",
+      },
+    ],
+    featured: true,
+  },
+  {
+    title: "PropertyPulse CRM",
+    description:
+      "A real-estate CRM for builders and brokers to capture leads, manage site visits, and follow up faster across WhatsApp, email, and calls.",
+    techStack: ["Next.js", "WhatsApp API", "MongoDB", "Tailwind CSS"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/demo/image/upload/samples/landscapes/architecture-signs.jpg",
+        publicId: "propertypulse-crm",
+        alt: "PropertyPulse CRM preview",
+      },
+    ],
+    featured: true,
+  },
+  {
+    title: "FoodLane POS",
+    description:
+      "A restaurant ordering and point-of-sale product for dine-in, takeaway, and online orders with menu control, table management, and reports.",
+    techStack: ["Next.js", "MongoDB", "Payments", "Cloudinary"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/demo/image/upload/samples/food/pot.jpg",
+        publicId: "foodlane-pos",
+        alt: "FoodLane POS preview",
+      },
+    ],
+    featured: true,
+  },
+  {
+    title: "SchoolBridge ERP",
+    description:
+      "A school ERP for admissions, attendance, homework, fees, notices, and parent communication, designed for institutions of every size.",
+    techStack: ["Next.js", "MongoDB", "SMS", "PDF Generation"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/demo/image/upload/samples/landscapes/girl-urban-view.jpg",
+        publicId: "schoolbridge-erp",
+        alt: "SchoolBridge ERP preview",
+      },
+    ],
+    featured: true,
+  },
+  {
+    title: "BizBook Inventory",
+    description:
+      "An inventory and billing platform for distributors and retailers with stock alerts, GST-ready invoices, and branch-wise reporting.",
+    techStack: ["Next.js", "PostgreSQL", "Tailwind CSS", "QR Codes"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/demo/image/upload/samples/landscapes/nature-mountains.jpg",
+        publicId: "bizbook-inventory",
+        alt: "BizBook inventory preview",
+      },
+    ],
     featured: true,
   },
 ];
