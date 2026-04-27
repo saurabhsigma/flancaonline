@@ -44,7 +44,7 @@ export function ContactForm() {
         throw new Error(payload.message || "Unable to send your message.");
       }
 
-      toast.success("Message sent successfully.");
+      toast.success("Message sen successfully.");
       form.reset();
     } catch (error) {
       toast.error(
