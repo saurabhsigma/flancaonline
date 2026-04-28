@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, LayoutGrid, Palette, Sparkles, Wand2 } from "lucide-react";
 
 import { AnimatedSection } from "@/components/animated-section";
 import { ContactForm } from "@/components/contact-form";
@@ -62,13 +61,13 @@ export function HomePage({
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button asChild size="lg">
-                  <Link href="#contact">
+                  <a href="#contact">
                     {content.heroPrimaryCta}
                     <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="#products">{content.heroSecondaryCta}</Link>
+                  <a href="#products">{content.heroSecondaryCta}</a>
                 </Button>
               </div>
             </div>
@@ -76,29 +75,50 @@ export function HomePage({
             <div className="relative">
               <div className="absolute inset-0 -z-10 bg-hero-grid bg-[size:42px_42px] opacity-60 [mask-image:radial-gradient(circle_at_center,black,transparent_80%)]" />
               <Card className="glass-panel relative overflow-hidden p-6 sm:p-8">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="rounded-3xl bg-slate-950 p-6 text-white dark:bg-slate-900">
-                    <p className="text-sm text-slate-300">Launch Velocity</p>
-                    <p className="mt-4 text-4xl font-semibold">4-8 weeks</p>
-                    <p className="mt-2 text-sm text-slate-300">
+                <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+                <div className="absolute -bottom-16 left-8 h-44 w-44 rounded-full bg-accent/10 blur-3xl" />
+                <div className="relative grid gap-5 sm:grid-cols-2">
+                  <div className="rounded-[1.75rem] border border-white/50 bg-white/75 p-6 shadow-lg backdrop-blur dark:border-white/10 dark:bg-slate-950/70">
+                    <div className="flex items-center gap-4">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                        <Sparkles className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <p className="text-sm text-muted-foreground">Launch Velocity</p>
+                        <p className="mt-1 text-3xl font-semibold">4-8 weeks</p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground">
                       For high-impact websites and validated MVP builds.
                     </p>
                   </div>
-                  <div className="rounded-3xl bg-secondary p-6">
-                    <p className="text-sm text-muted-foreground">Trusted Workflow</p>
-                    <p className="mt-4 text-2xl font-semibold">Strategy → Design → Build</p>
-                    <p className="mt-2 text-sm text-muted-foreground">
+                  <div className="rounded-[1.75rem] border border-white/50 bg-secondary/70 p-6 backdrop-blur dark:border-white/10 dark:bg-slate-900/70">
+                    <div className="flex items-center gap-4">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/15 text-accent-foreground">
+                        <LayoutGrid className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <p className="text-sm text-muted-foreground">Trusted Workflow</p>
+                        <p className="mt-1 text-2xl font-semibold">Strategy → Design → Build</p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm text-muted-foreground">
                       Structured delivery with clarity, polish, and speed.
                     </p>
                   </div>
-                  <div className="rounded-3xl border border-primary/20 bg-primary/10 p-6 sm:col-span-2">
-                    <p className="text-sm font-medium text-primary">
-                      Product-minded execution
-                    </p>
-                    <p className="mt-3 text-sm text-muted-foreground">
-                      We design for conversion, build for maintainability, and optimize for
-                      long-term growth instead of one-off launches.
-                    </p>
+                  <div className="rounded-[1.75rem] border border-primary/20 bg-primary/10 p-6 sm:col-span-2">
+                    <div className="flex items-center gap-4">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-background/80 text-primary shadow-sm">
+                        <Wand2 className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <p className="text-sm font-medium text-primary">Product-minded execution</p>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          We design for conversion, build for maintainability, and optimize for
+                          long-term growth instead of one-off launches.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Card>
@@ -106,7 +126,7 @@ export function HomePage({
           </div>
         </section>
 
-        <AnimatedSection id="services" className="py-20">
+        <AnimatedSection id="services" className="scroll-mt-24 py-20">
           <div className="container-max">
             <SectionHeading
               badge="Star Services"
@@ -117,10 +137,15 @@ export function HomePage({
               {content.services.map((service, index) => (
                 <Card
                   key={service.title}
-                  className="group glass-panel p-6 transition duration-300 hover:-translate-y-2 hover:border-primary/30"
+                  className="group glass-panel p-6 hover:border-primary/30"
                 >
-                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10 text-sm font-semibold text-primary">
-                    0{index + 1}
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10 text-sm font-semibold text-primary">
+                      0{index + 1}
+                    </div>
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/80 text-primary">
+                      {index % 2 === 0 ? <Palette className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
+                    </span>
                   </div>
                   <h3 className="text-xl font-semibold">{service.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -132,7 +157,7 @@ export function HomePage({
           </div>
         </AnimatedSection>
 
-        <AnimatedSection className="py-20">
+        <AnimatedSection className="scroll-mt-24 py-20">
           <div className="container-max grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <SectionHeading
@@ -144,7 +169,9 @@ export function HomePage({
             <div className="space-y-4">
               {content.whyChooseUsItems.map((item) => (
                 <Card key={item} className="glass-panel flex items-start gap-4 p-5">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-primary" />
+                  <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <CheckCircle2 className="h-4 w-4" />
+                  </span>
                   <p className="text-sm text-muted-foreground">{item}</p>
                 </Card>
               ))}
@@ -152,7 +179,7 @@ export function HomePage({
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="products" className="py-20">
+        <AnimatedSection id="products" className="scroll-mt-24 py-20">
           <div className="container-max">
             <SectionHeading
               badge="Products"
@@ -163,7 +190,7 @@ export function HomePage({
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="about" className="py-20">
+        <AnimatedSection id="about" className="scroll-mt-24 py-20">
           <div className="container-max grid gap-8 lg:grid-cols-2">
             <Card className="glass-panel p-8">
               <Badge className="mb-4">About</Badge>
@@ -188,7 +215,7 @@ export function HomePage({
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="contact" className="py-20">
+        <AnimatedSection id="contact" className="scroll-mt-24 py-20">
           <div className="container-max grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
             <Card className="glass-panel p-8">
               <Badge className="mb-4">Contact</Badge>

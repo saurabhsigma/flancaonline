@@ -92,7 +92,7 @@ export function ContactForm() {
         <p className="text-xs text-red-500">{form.formState.errors.message?.message}</p>
       </div>
       <Button type="submit" size="lg" disabled={isSubmitting}>
-        {isSubmitting ? <LoaderCircle className="h-4 w-4 animate-spin" /> : null}
+        {isSubmitting ? <LoaderCircle className="h-4 w-4" /> : null}
         Send inquiry
       </Button>
     </form>

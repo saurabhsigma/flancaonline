@@ -31,6 +31,8 @@ CLOUDINARY_API_KEY=your-api-key
 CLOUDINARY_API_SECRET=your-api-secret
 ```
 
+If MongoDB is not running locally, the public site still renders using the built-in default content and projects. Admin edits, contact submissions, and auth persistence still require a reachable MongoDB instance.
+
 ## Getting Started
 
 ```bash

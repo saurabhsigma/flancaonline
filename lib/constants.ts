@@ -44,8 +44,8 @@ export const defaultSiteContent = {
   contactTitle: "Tell us what you're building",
   contactDescription:
     "Share your goals, timeline, and vision. We’ll come back with a practical next step.",
-  contactEmail: "hello@flanca.studio",
-  contactPhone: "+91 98765 43210",
+  contactEmail: "saurabh962003@gmail.com",
+  contactPhone: "+91-9369308467",
   contactLocation: "Remote-first, serving clients worldwide",
 };
 
